@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB669FDB27D14615007231A0 /* ToDoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB669FDA27D14615007231A0 /* ToDoListRow.swift */; };
 		BBBEDE7927CFFF5D00298062 /* Realm_ToDo_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEDE7827CFFF5D00298062 /* Realm_ToDo_1App.swift */; };
 		BBBEDE7B27CFFF5D00298062 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEDE7A27CFFF5D00298062 /* ToDoListView.swift */; };
 		BBBEDE7D27CFFF5E00298062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBBEDE7C27CFFF5E00298062 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB669FDA27D14615007231A0 /* ToDoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRow.swift; sourceTree = "<group>"; };
 		BBBEDE7527CFFF5D00298062 /* Realm ToDo-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Realm ToDo-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBEDE7827CFFF5D00298062 /* Realm_ToDo_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm_ToDo_1App.swift; sourceTree = "<group>"; };
 		BBBEDE7A27CFFF5D00298062 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
@@ -40,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB669FD927D14602007231A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBBEDE7A27CFFF5D00298062 /* ToDoListView.swift */,
+				BB669FDA27D14615007231A0 /* ToDoListRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BBBEDE6C27CFFF5D00298062 = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +72,7 @@
 			children = (
 				BBBEDE7827CFFF5D00298062 /* Realm_ToDo_1App.swift */,
 				BBBEDE9027D0296D00298062 /* Models */,
-				BBBEDE7A27CFFF5D00298062 /* ToDoListView.swift */,
+				BB669FD927D14602007231A0 /* Views */,
 				BBBEDE7C27CFFF5E00298062 /* Assets.xcassets */,
 				BBBEDE8627CFFFAE00298062 /* Launch Screen.storyboard */,
 				BBBEDE7E27CFFF5E00298062 /* Preview Content */,
@@ -165,6 +176,7 @@
 			files = (
 				BBBEDE9227D0297900298062 /* ToDo.swift in Sources */,
 				BBBEDE7B27CFFF5D00298062 /* ToDoListView.swift in Sources */,
+				BB669FDB27D14615007231A0 /* ToDoListRow.swift in Sources */,
 				BBBEDE7927CFFF5D00298062 /* Realm_ToDo_1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

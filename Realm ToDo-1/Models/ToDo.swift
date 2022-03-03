@@ -5,7 +5,7 @@
 //  Created by Stewart Lynch on 2022-03-02.
 //
 
-import Foundation
+import SwiftUI
 import RealmSwift
 
 class ToDo: Object, ObjectKeyIdentifiable {
@@ -27,8 +27,28 @@ class ToDo: Object, ObjectKeyIdentifiable {
                 return "Urgent"
             }
         }
+        var color: Color {
+            switch self {
+            case .trivial:
+                return .teal
+            case .neutral:
+                return .secondary
+            case .urgent:
+                return .red
+            }
+        }
     }
     
+    func increment() -> Urgency {
+        switch urgency {
+        case .trivial:
+            return .neutral
+        case .neutral:
+            return .urgent
+        case .urgent:
+            return .trivial
+        }
+    }
     convenience init(name: String) {
         self.init()
         self.name = name

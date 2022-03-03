@@ -11,6 +11,7 @@ import RealmSwift
 struct ToDoListView: View {
     @ObservedResults(ToDo.self) var toDos
     @State private var name = ""
+    @State private var searchFilter = ""
     @FocusState private var focus: Bool?
     var body: some View {
         NavigationView {
@@ -32,13 +33,28 @@ struct ToDoListView: View {
                 }
                 .padding()
                 List() {
-                    ForEach(toDos) { toDo in
-                        Text(toDo.name)
+//                    ForEach(toDos.sorted(byKeyPath: "completed")) { toDo in
+                    ForEach(toDos.sorted(by: [
+                        SortDescriptor(keyPath: "completed"),
+                        SortDescriptor(keyPath: "urgency", ascending: false)
+                    ])) { toDo in
+                        ToDoListRow(toDo: toDo)
                     }
+                    .onDelete(perform: $toDos.remove)
                     .listRowSeparator(.hidden)
                 }
+                .searchable(text: $searchFilter,
+                            collection: $toDos,
+                            keyPath: \.name,
+                            suggestions: {
+                    ForEach(toDos) { toDo in
+                        Text(toDo.name)
+                            .searchCompletion(toDo.name)
+                    }
+                })
                 .listStyle(.plain)
             }
+            .animation(.default, value: toDos)
             .navigationTitle("Realm ToDos")
         }
     }
