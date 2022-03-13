@@ -40,19 +40,18 @@ struct ToDoListView: View {
                     ])) { toDo in
                         ToDoListRow(toDo: toDo)
                     }
-                    .onDelete(perform: $toDos.remove)
+//                    .onDelete(perform: $toDos.remove)
                     .listRowSeparator(.hidden)
                 }
+                .listStyle(.plain)
                 .searchable(text: $searchFilter,
                             collection: $toDos,
-                            keyPath: \.name,
-                            suggestions: {
+                            keyPath: \.name) {
                     ForEach(toDos) { toDo in
                         Text(toDo.name)
                             .searchCompletion(toDo.name)
                     }
-                })
-                .listStyle(.plain)
+                }
             }
             .animation(.default, value: toDos)
             .navigationTitle("Realm ToDos")
